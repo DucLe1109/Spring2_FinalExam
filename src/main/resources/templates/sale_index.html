@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Sale Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+
+</head>
+<body>
+<div class="container">
+    <h1 style="margin-top: 30px">SALE LIST - <a class="btn btn-success" th:href="@{/product}">View Product</a></h1>
+    <table class="table mt-3">
+        <thead class="thead-dark">
+        <tr>
+            <th>SlNo</th>
+            <th>SalesmanID</th>
+            <th>ProdID</th>
+            <th>Salesman Name</th>
+            <th>DOS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="item : ${list_sale}">
+            <tr>
+                <td th:text="${item.getSino()}"></td>
+                <td th:text="${item.getSalesmanid()}"></td>
+                <td th:text="${item.getProdid()}"></td>
+                <td th:text="${item.getSalesmanname()}"></td>
+                <td th:text="${item.getDos()}"></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
